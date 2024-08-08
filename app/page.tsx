@@ -8,8 +8,7 @@ const page = () => {
 
   return (
     <div>
-        <h1>Spotify Login</h1>
-        <Link href={process.env.spotifyAuthUrl} >Login with Spotify</Link> 
+        <Link href={process.env.spotifyAuthUrl}>Login with Spotify</Link> 
     </div>
   )
 }
