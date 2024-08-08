@@ -65,12 +65,11 @@ interface userTracks {
   }
 
 //const spotifyAuthUrl = "https://heardle.herokuapp.com"
-const spotifyAuthUrl = 'http://localhost:5000/';
-
+//const spotifyAuthUrl = 'http://localhost:5000/';
 
 const User: React.FC = async () => {
 
-    const res = await fetch(path.join(spotifyAuthUrl, "auth/token"), { cache: 'no-store' });
+    const res = await fetch(path.join(process.env.spotifyAuthUrl, "auth/token"), { cache: 'no-store' });
     const res_data = await res.json();
     const token = res_data.access_token;
 
