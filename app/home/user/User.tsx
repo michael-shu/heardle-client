@@ -71,7 +71,7 @@ const api = spotifyAuthURL + "auth/token";
 const User: React.FC = async () => {
 
   
-    const res = await fetch("https://testdeployment-7f48ff13a796.herokuapp.com/auth/token");
+    const res = await fetch(api);
     const res_data = await res.json();
     const token = res_data.access_token;
 
