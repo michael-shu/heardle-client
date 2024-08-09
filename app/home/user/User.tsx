@@ -64,14 +64,14 @@ interface userTracks {
 
 //const spotifyAuthUrl = 'http://localhost:5000/';
 
-const spotifyAuthURL = process.env.AUTH_URL || '/fallback-url';
+const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:5000/';
 const api = spotifyAuthURL + "auth/token";
 
 
 const User: React.FC = async () => {
 
   
-    const res = await fetch(api);
+    const res = await fetch(api, { cache: 'no-store' });
     const res_data = await res.json();
     const token = res_data.access_token;
 
