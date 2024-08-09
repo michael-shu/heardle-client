@@ -207,12 +207,8 @@ const User: React.FC = async () => {
     const res_data = await res.json();
     return (
       <div>
-      {res_data.map((item:string, key:number) => {
-        return(
-          <div key={key}>{item}</div>
-        );
-
-      })}
+      {res_data.userId}
+      {res_data.title}
     </div>
     );
   }
