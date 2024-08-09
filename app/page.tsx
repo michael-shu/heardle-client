@@ -2,6 +2,9 @@ import React from 'react'
 import Link from 'next/link';
 //const spotifyAuthUrl = 'http://localhost:5000/auth/login';
 
+
+
+
 const spotifyAuthURL = process.env.AUTH_URL || '/fallback-url';
 
 const page = () => {
