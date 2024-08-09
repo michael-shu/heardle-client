@@ -65,13 +65,14 @@ interface userTracks {
 //const spotifyAuthUrl = "https://heardle.herokuapp.com"
 //const spotifyAuthUrl = 'http://localhost:5000/';
 
-//const spotifyAuthURL = process.env.AUTH_URL || '/fallback-url';
+const spotifyAuthURL = process.env.AUTH_URL || '/fallback-url';
+const api = spotifyAuthURL + "auth/token";
 
 
 const User: React.FC = async () => {
 
-  /*
-    const res = await fetch(spotifyAuthURL + "auth/token", { cache: 'no-store' });
+  
+    const res = await fetch(spotifyAuthURL, { cache: 'no-store' });
     const res_data = await res.json();
     const token = res_data.access_token;
 
@@ -201,16 +202,22 @@ const User: React.FC = async () => {
     </div>
 
     </div>
-    );*/
+    );
+
+    /*
 
     const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
     const res_data = await res.json();
+    console.log(res_data);
     return (
       <div>
       {res_data.userId}
       {res_data.title}
     </div>
-    );
+    );*/
+
+
+    
   }
 
 
