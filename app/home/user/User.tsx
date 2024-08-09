@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import path from 'path';
 
-
 interface userProfile {
     display_name: string;
     external_urls: {
