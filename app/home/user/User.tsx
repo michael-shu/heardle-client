@@ -102,95 +102,104 @@ const User: React.FC = async () => {
 
 
     return (
-      <div className="bg-slate-900 p-6 min-h-screen flex flex-col items-center">
+      <div className = "bg-slate-900 p-6">
       
-      <div className="bg-white rounded-2xl p-6 shadow-lg mb-8 w-full max-w-4xl flex flex-col md:flex-row items-center">
-        <Image
-          className="rounded-full shadow-md"
-          src={profileData.images && profileData.images.length > 0 ? profileData.images[0].url : '/default_user_icon.jpg'}
-          alt={profileData.display_name}
-          width={200}
-          height={200}
-        />
-        <div className="flex flex-col text-center md:text-left md:ml-6 mt-4 md:mt-0">
-          <p className="md:text-4xl text-2xl font-semibold text-gray-800">{profileData.display_name}</p>
-          <p className="text-gray-600 mt-2">Followers: {profileData.followers.total.toLocaleString()}</p>
-          <a
-            href={profileData.external_urls.spotify}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:underline mt-3 text-lg"
-          >
-            View on Spotify
-          </a>
-        </div>
-      </div>
+      <div className="bg-white rounded-2xl p-5 mb-5 flex flex-col md:flex-row md:w-4/12 items-center mx-auto">
+  <Image
+    className="rounded-xl flex-shrink-0"
+    src={profileData.images && profileData.images.length > 0 ? profileData.images[1].url : '/default_user_icon.jpg'}
+    alt={profileData.display_name}
+    width={200}
+    height={200}
+  />
+  <div className="flex flex-col text-center m-4 md:basis-2/3 w-full">
+    <p className="md:text-3xl text-xl font-semibold text-gray-800">{profileData.display_name}</p>
+    <p className="text-gray-600">Followers: {profileData.followers.total}</p>
+    <a
+      href={profileData.external_urls.spotify}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-500 hover:underline mt-2"
+    >
+      View on Spotify
+    </a>
+  </div>
+</div>
 
-      <div className="flex flex-col md:flex-row justify-center w-full max-w-5xl gap-8">
-        
-        <div className="bg-slate-700 rounded-2xl p-6 w-full md:w-1/2 shadow-lg">
-          <h2 className="text-3xl text-indigo-200 font-bold mb-4 border-b-4 border-indigo-400 pb-2 text-center">Top Artists</h2>
-          <table className="w-full">
-            <tbody>
-              {topArtists.items.map((artist: userArtists, index: number) => (
-                <tr key={index} className="text-white hover:bg-slate-800 transition">
-                  <td className="p-2">
-                    <Image
-                      className="rounded-full"
-                      src={artist.images.length > 0 ? artist.images[2].url : '/default_user_icon.jpg'}
-                      alt={artist.name}
-                      width={50}
-                      height={50}
-                    />
-                  </td>
-                  <td className="p-2">
-                    <a
-                      href={artist.external_urls.spotify}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-blue-400"
-                    >
-                      {artist.name}
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
 
-        <div className="bg-slate-700 rounded-2xl p-6 w-full md:w-1/2 shadow-lg">
-          <h2 className="text-3xl text-indigo-200 font-bold mb-4 border-b-4 border-indigo-400 pb-2 text-center">Top Songs</h2>
-          <table className="w-full">
-            <tbody>
-              {topTracks.items.map((track: userTracks, index: number) => (
-                <tr key={index} className="text-white hover:bg-slate-800 transition">
-                  <td className="p-2">
-                    <Image
-                      className="rounded-md"
-                      src={track.album.images.length > 0 ? track.album.images[0].url : '/default_user_icon.jpg'}
-                      alt={track.album.artists.name}
-                      width={50}
-                      height={50}
-                    />
-                  </td>
-                  <td className="p-2">
-                    <a
-                      href={track.external_urls.spotify}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-blue-400"
-                    >
-                      {track.name}
-                    </a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+    <div className="flex flex-col items-center md:grid md:grid-cols-2 gap-6 rounded-md">
 
-      </div>
+        <table className="rounded-2xl bg-slate-700 p-4 w-full md:w-auto">
+    <thead>
+      <tr>
+        <th colSpan={2} className="text-center py-2 px-2">
+          <div className="md:text-3xl text-indigo-200 font-bold p-2 border-b-4 border-black">Top Artists</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {topArtists.items.map((artist: userArtists, index: number) => (
+        <tr key={index}>
+          <td className={index === 9 ? "p-2" : "p-2 border-b-2 border-black"}>
+            <Image
+              className="rounded-full"
+              src={artist.images.length > 0 ? artist.images[2].url : '/default_user_icon.jpg'}
+              alt={artist.name}
+              width={50}
+              height={50}
+            />
+          </td>
+          <td className={index === 9 ? "p-2" : "p-2 border-b-2 border-black"}>
+            <a
+              href={artist.external_urls.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-500"
+            >
+              {artist.name}
+            </a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+        </table>
+
+        <table className="rounded-2xl bg-slate-700 p-4">
+    <thead>
+      <tr>
+        <th colSpan={2} className="text-center py-2 px-2">
+          <div className="md:text-3xl text-indigo-200 font-bold p-2 border-b-4 border-black">Top Songs</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {topTracks.items.map((track: userTracks, index: number) => (
+        <tr key={index}>
+          <td className={index === 9 ? "p-2" : "p-2 border-b-2 border-black"}>
+            <Image
+              className="rounded-md"
+              src={track.album.images.length > 0 ? track.album.images[0].url : '/default_user_icon.jpg'}
+              alt={track.album.artists.name}
+              width={50}
+              height={50}
+            />
+          </td>
+          <td className={index === 9 ? "p-2" : "p-2 border-b-2 border-black"}>
+            <a
+              href={track.external_urls.spotify}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-500"
+            >
+              {track.name}
+            </a>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+        </table>
+
+    </div>
 
     </div>
     );
