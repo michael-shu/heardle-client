@@ -72,9 +72,9 @@ const api = spotifyAuthURL + "auth/token";
 const User: React.FC = async () => {
 
   
-    //const res = await fetch(api, { cache: 'no-store' });
-    //const res_data = await res.json();
-    //const token = res_data.access_token;
+    const res = await fetch(api, { cache: 'no-store' });
+    const res_data = await res.json();
+    const token = res_data.access_token;
 
     /*
     // Fetch user data using the token
