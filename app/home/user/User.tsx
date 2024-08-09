@@ -71,7 +71,7 @@ const spotifyAuthURL = process.env.AUTH_URL || '/fallback-url';
 
 const User: React.FC = async () => {
 
-    const res = await fetch(path.join(spotifyAuthURL, "auth/token"), { cache: 'no-store' });
+    const res = await fetch(spotifyAuthURL + "auth/token", { cache: 'no-store' });
     const res_data = await res.json();
     const token = res_data.access_token;
 
