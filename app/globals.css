@@ -4,4 +4,8 @@
 
 #menu-toggle:checked ~ #menu {
     display: block;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.5rem); /* Adjusts position relative to the button */
   }
+  

@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <ul className="bg-emerald-800 text-white absolute left-0 top-full mt-2 w-auto hidden md:hidden" id="menu">
+        <ul className="bg-emerald-800 text-white absolute left-0 top-full mt-2 w-auto hidden" id="menu">
           <li className="hover:bg-emerald-700 p-4">
             <Link href="/home">Home</Link>
           </li>
