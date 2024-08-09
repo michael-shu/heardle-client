@@ -75,7 +75,8 @@ const User: React.FC = async () => {
     const res = await fetch(api, { cache: 'no-store' });
     const res_data = await res.json();
     const token = res_data.access_token;
-  
+
+    /*
     // Fetch user data using the token
     const userRes = await fetch('https://api.spotify.com/v1/me', {
         headers: {
@@ -202,17 +203,17 @@ const User: React.FC = async () => {
     </div>
 
     </div>
-    );
+    );*/
 
-    /*
+    
     //const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
     //const res_data = await res.json();
     //console.log(res_data);
     return (
       <div>
-      {api}
+      {token}
     </div>
-    );*/
+    );
   }
 
 
