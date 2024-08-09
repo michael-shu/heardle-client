@@ -60,9 +60,8 @@ interface userTracks {
     external_urls: {
       spotify: string;
     };
-  }
+}
 
-//const spotifyAuthUrl = "https://heardle.herokuapp.com"
 //const spotifyAuthUrl = 'http://localhost:5000/';
 
 const spotifyAuthURL = process.env.AUTH_URL || '/fallback-url';
