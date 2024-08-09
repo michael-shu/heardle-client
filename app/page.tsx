@@ -6,6 +6,7 @@ const spotifyAuthURL = process.env.AUTH_URL || '/fallback-url';
 
 
 const spotifyLogin = path.join(spotifyAuthURL, "auth/login");
+console.log(spotifyLogin);
 
 const page = () => {
 
