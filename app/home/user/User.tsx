@@ -71,9 +71,9 @@ const api = spotifyAuthURL + "auth/token";
 const User: React.FC = async () => {
 
   
-    const res = await fetch(api, { cache: 'no-store' });
-    const res_data = await res.json();
-    const token = res_data.access_token;
+    //const res = await fetch(api);
+    //const res_data = await res.json();
+    //const token = res_data.access_token;
 
     /*
     // Fetch user data using the token
@@ -205,12 +205,12 @@ const User: React.FC = async () => {
     );*/
 
     
-    //const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-    //const res_data = await res.json();
-    //console.log(res_data);
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    const res_data = await res.json();
     return (
       <div>
       {api}
+      {res_data.title}
     </div>
     );
   }
