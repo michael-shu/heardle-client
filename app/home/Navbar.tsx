@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from 'next/image';
 
 const Navbar = () => {
   return (
@@ -21,7 +21,7 @@ const Navbar = () => {
           </label>
 
           {/* Menu Links */}
-          <ul className="hidden md:flex gap-x-8 text-white md:block" id="menu">
+          <ul className="hidden md:flex gap-x-8 text-white" id="menu">
             <li className="hover:text-gray-300 transition duration-300">
               <Link href="/home">Home</Link>
             </li>
@@ -39,7 +39,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <ul className="bg-emerald-800 text-white absolute left-0 top-20 w-full hidden" id="menu">
+      <ul className="bg-emerald-800 text-white absolute left-0 top-20 w-full hidden md:hidden" id="menu">
         <li className="hover:bg-emerald-700 p-4">
           <Link href="/home">Home</Link>
         </li>
@@ -53,13 +53,6 @@ const Navbar = () => {
           <Link href="/home/about">About</Link>
         </li>
       </ul>
-
-      {/* Mobile Menu Toggle */}
-      <style jsx>{`
-        #menu-toggle:checked + label + #menu {
-          display: block;
-        }
-      `}</style>
     </div>
   );
 };
