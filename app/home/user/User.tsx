@@ -71,18 +71,23 @@ const api = spotifyAuthURL + "auth/token";
 const User: React.FC = async () => {
 
   
-    const res = await fetch(api, { cache: 'no-store' });
+    const res = await fetch(api, {cache: 'no-cache'});
     const res_data = await res.json();
     const token = res_data.access_token;
 
-    
+    console.log(token);
+
     // Fetch user data using the token
     const userRes = await fetch('https://api.spotify.com/v1/me', {
         headers: {
         Authorization: `Bearer ${token}`,
         },
     });
+    //console.log(userRes);
+
     const profileData: userProfile = await userRes.json();
+
+    //console.log(profileData);
 
     //Fetch top artists for user
     const artistsRes = await fetch('https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10', {
