@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
 #menu-toggle:checked ~ #menu {
-    display: block;
+    display: flex;
+    position: absolute;
+    top: calc(100% + 0.5rem); /* Adjusts position relative to the button */
+}
+
+/*
+#menu-toggle:checked ~ #menu {
+    display: flex;
     position: absolute;
     left: 0;
     top: calc(100% + 0.5rem); /* Adjusts position relative to the button */
-  }
-  

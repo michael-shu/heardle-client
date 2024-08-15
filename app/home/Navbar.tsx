@@ -5,7 +5,7 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <div className="w-full h-20 bg-emerald-800 sticky top-0 shadow-lg">
-      <div className="container mx-auto px-4 h-full relative">
+      <div className="container mx-auto px-4 h-full">
         <div className="flex justify-between items-center h-full">
           <div className="flex items-center gap-x-4">
             <Image alt="logo" src="/logo.svg" width={50} height={75} className="rounded-full" />
@@ -21,7 +21,7 @@ const Navbar = () => {
           </label>
 
           {/* Menu Links */}
-          <ul className="hidden md:flex gap-x-8 text-white">
+          <ul className="hidden md:flex gap-x-8 text-white" id="menu">
             <li className="hover:text-gray-300 transition duration-300">
               <Link href="/home">Home</Link>
             </li>
@@ -36,23 +36,23 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-
-        {/* Mobile Menu */}
-        <ul className="bg-emerald-800 text-white absolute left-0 top-full mt-2 w-auto hidden" id="menu">
-          <li className="hover:bg-emerald-700 p-4">
-            <Link href="/home">Home</Link>
-          </li>
-          <li className="hover:bg-emerald-700 p-4">
-            <Link href="/home/user">User</Link>
-          </li>
-          <li className="hover:bg-emerald-700 p-4">
-            <Link href="/home/play">Play</Link>
-          </li>
-          <li className="hover:bg-emerald-700 p-4">
-            <Link href="/home/about">About</Link>
-          </li>
-        </ul>
       </div>
+
+      {/* Mobile Menu */}
+      <ul className="bg-emerald-800 text-white absolute left-0 top-20 w-full hidden md:hidden" id="menu">
+        <li className="hover:bg-emerald-700 p-4">
+          <Link href="/home">Home</Link>
+        </li>
+        <li className="hover:bg-emerald-700 p-4">
+          <Link href="/home/user">User</Link>
+        </li>
+        <li className="hover:bg-emerald-700 p-4">
+          <Link href="/home/play">Play</Link>
+        </li>
+        <li className="hover:bg-emerald-700 p-4">
+          <Link href="/home/about">About</Link>
+        </li>
+      </ul>
     </div>
   );
 };

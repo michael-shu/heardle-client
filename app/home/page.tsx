@@ -21,22 +21,18 @@ const page = () => {
             <p className="mb-4">
               View your top artists, songs, and more. Customize your experience with personalized playlists.
             </p>
-            <Link href="/home/user">
-              <a className="bg-emerald-600 hover:bg-emerald-800 text-white py-2 px-4 rounded-full transition">
+            <Link className="bg-emerald-600 hover:bg-emerald-800 text-white py-2 px-4 rounded-full transition" href="/home/user">
                 View Your Profile
-              </a>
             </Link>
           </div>
 
           <div className="bg-white bg-opacity-20 p-6 rounded-lg shadow-lg hover:bg-opacity-30 transition">
             <h2 className="text-2xl font-semibold mb-2">Play a Game</h2>
             <p className="mb-4">
-              Test your music knowledge with our fun and engaging trivia game.
+              How well do you know your own tastes
             </p>
-            <Link href="/home/play">
-              <a className="bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded-full transition">
+            <Link className="bg-blue-600 hover:bg-blue-800 text-white py-2 px-4 rounded-full transition" href="/home/play">
                 Start Playing
-              </a>
             </Link>
           </div>
 
@@ -45,10 +41,8 @@ const page = () => {
             <p className="mb-4">
               Curious about the people behind Heardle? Get to know our story and what drives us.
             </p>
-            <Link href="/home/about">
-              <a className="bg-purple-600 hover:bg-purple-800 text-white py-2 px-4 rounded-full transition">
+            <Link className="bg-purple-600 hover:bg-purple-800 text-white py-2 px-4 rounded-full transition" href="/home/about">
                 About Us
-              </a>
             </Link>
           </div>
         </section>
