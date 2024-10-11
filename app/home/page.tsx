@@ -1,8 +1,22 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Link from 'next/link';
+import { cookies } from 'next/headers';
+
+const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:5000/';
+
 
 const page = async () => {
+  console.log("These are the user cookies, ", cookies().toString());
+
+  
+  const test = await fetch(spotifyAuthURL + "/test-session", {
+    cache: 'no-cache',
+    headers: { Cookie: cookies().toString() },
+  });
+  const data = await test.json();
+  console.log("Heres the data");
+  console.table(data);
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 text-white">
