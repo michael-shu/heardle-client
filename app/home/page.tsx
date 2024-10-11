@@ -8,6 +8,7 @@ const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:5000/';
 
 const page = async () => {
   console.log("These are the user cookies, ", cookies().toString());
+  console.log("This is the url we're headed to " + spotifyAuthURL + "/test-session")
 
   
   const test = await fetch(spotifyAuthURL + "/test-session", {

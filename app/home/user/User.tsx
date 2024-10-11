@@ -79,6 +79,7 @@ const User: React.FC = async () => {
     cache: 'no-cache',
     headers: { Cookie: cookies().toString() },
   });
+  console.log(test);
   const genreData = await test.json();
   console.table(genreData);
 
