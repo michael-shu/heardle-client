@@ -11,7 +11,7 @@ const page = async () => {
   console.log("This is the url we're headed to " + spotifyAuthURL + "test-session")
 
   
-  const test = await fetch(spotifyAuthURL + "/test-session", {
+  const test = await fetch(spotifyAuthURL + "test-session", {
     cache: 'no-cache',
     headers: { Cookie: cookies().toString() },
   });

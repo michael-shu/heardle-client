@@ -72,14 +72,22 @@ const User: React.FC = async () => {
 
   console.log("These are the user cookies, ", cookies().getAll());
 
-  
+  const test = await fetch(spotifyAuthURL + "test-session", {
+    cache: 'no-cache',
+    headers: { Cookie: cookies().toString() },
+  });
+  const data = await test.json();
+  console.log("Heres the session data");
+  console.table(data);
+
+  /*
   const test = await fetch(spotifyAuthURL + "api/recommendation_genres", {
     cache: 'no-cache',
     headers: { Cookie: cookies().toString() },
   });
   console.log(test);
   const genreData = await test.json();
-  console.table(genreData);
+  console.table(genreData);*/
 
   //Fetch user data
   const res = await fetch(spotifyAuthURL + "api/user_profile", {
