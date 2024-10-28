@@ -17,7 +17,7 @@ const page = async () => {
   });
   const data = await test.json();
   console.log("Heres the data");
-  console.table(data);
+  console.log(data);
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 text-white">

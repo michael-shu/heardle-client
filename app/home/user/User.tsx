@@ -78,7 +78,7 @@ const User: React.FC = async () => {
   });
   const data = await test.json();
   console.log("Heres the session data");
-  console.table(data);
+  console.log(data);
 
   /*
   const test = await fetch(spotifyAuthURL + "api/recommendation_genres", {
