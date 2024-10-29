@@ -25,7 +25,6 @@ const page = async () => {
 
   
   const test = await fetch(spotifyAuthURL + "test-cookie", {
-    cache: 'no-cache',
     headers: { Cookie: cookies().toString() },
     credentials: 'include'
   });
