@@ -75,6 +75,7 @@ const User: React.FC = async () => {
   const test = await fetch(spotifyAuthURL + "test-session", {
     cache: 'no-cache',
     headers: { Cookie: cookies().toString() },
+    credentials: 'include'
   });
   const data = await test.json();
   console.log("Heres the session data");
