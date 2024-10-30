@@ -41,7 +41,7 @@ const page = async () => {
       <div className="container mx-auto px-4 py-12">
         <section className="text-center mb-16">
           Heres the user cookies:
-          {cookies.toString()}
+          {cookies().toString()}
           <h1 className="text-4xl font-bold mb-4">Welcome to Heardle</h1>
           <p className="text-lg">
             Discover your favorite tunes, track your listening habits, and dive deep into the world of music with Heardle.
