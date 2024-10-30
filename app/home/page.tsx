@@ -42,6 +42,8 @@ const page = async () => {
         <section className="text-center mb-16">
           Heres the user cookies:
           {cookies().toString()}
+          Heres the response data...:
+          {data}
           <h1 className="text-4xl font-bold mb-4">Welcome to Heardle</h1>
           <p className="text-lg">
             Discover your favorite tunes, track your listening habits, and dive deep into the world of music with Heardle.
