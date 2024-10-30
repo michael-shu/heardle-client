@@ -6,33 +6,21 @@ import { cookies } from 'next/headers';
 const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:5000/';
 
 
-export async function fetchWithCookies(url: string) {
-  const cookieStore = cookies();
-  
-  const response = await fetch(url, {
-      credentials: 'include',
-      headers: {
-          'Cookie': cookieStore.toString(),
-      },
-      cache: 'no-store'
-  });
-  
-  // Extract Set-Cookie headers
-  const setCookieHeaders = response.headers.get('set-cookie');
-  
-  console.log(setCookieHeaders);
-  
-  return setCookieHeaders;
-}
-
-
 const page = async () => {
-  const cookieStore = cookies();
+  console.log("These are the user cookies, ", cookies().toString());
+  /*
+  console.log("This is the url we're headed to " + spotifyAuthURL + "test-session")
 
-  const response = await fetchWithCookies(`${process.env.SPOTIFY_AUTH_URL}test-cookie`);
-  console.log(response);
+  
+  const test = await fetch(spotifyAuthURL + "test-session", {
+    cache: 'no-cache',
+    headers: { Cookie: cookies().toString() },
+    credentials: 'include'
+  });
+  const data = await test.json();
+  console.log("Heres the data");
+  console.log(data);*/
 
-    /*
   console.log("This is the url we're headed to " + spotifyAuthURL + "test-cookie")
 
   
@@ -44,7 +32,7 @@ const page = async () => {
   console.log("Heres the data");
   console.log(data);
   console.log("heres the user cookies");
-  console.log(cookies().toString());*/
+  console.log(cookies().toString());
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 text-white">
@@ -54,8 +42,6 @@ const page = async () => {
         <section className="text-center mb-16">
           Heres the user cookies:
           {cookies().toString()}
-          Heres the response data...:
-          {response}
           <h1 className="text-4xl font-bold mb-4">Welcome to Heardle</h1>
           <p className="text-lg">
             Discover your favorite tunes, track your listening habits, and dive deep into the world of music with Heardle.
