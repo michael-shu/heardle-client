@@ -64,8 +64,6 @@ interface userTracks {
   };
 }
 
-//const spotifyAuthUrl = 'http://localhost:5000/';
-
 const spotifyAuthURL = process.env.BASE_URL + "api/data";
 
 const User: React.FC = async () => {
@@ -92,34 +90,6 @@ const User: React.FC = async () => {
   });
   const topTracks = await tracksRes.json();
 
-  /*
-
-  // Fetch user data using the token
-  const userRes = await fetch('https://api.spotify.com/v1/me', {
-      headers: {
-      Authorization: `Bearer ${token}`,
-      },
-  });
-
-  const profileData: userProfile = await userRes.json();
-
-
-  //Fetch top artists for user
-  const artistsRes = await fetch('https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10', {
-      headers: {
-      Authorization: `Bearer ${token}`,
-      },
-  });
-  const topArtists = await artistsRes.json();
-
-  //Fetch top tracks for user
-  const tracksRes = await fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10', {
-      headers: {
-      Authorization: `Bearer ${token}`,
-      },
-  });
-  const topTracks = await tracksRes.json();
-  */
 
   return (
     <div className="bg-slate-900 p-6">
@@ -127,7 +97,7 @@ const User: React.FC = async () => {
       <div className="bg-white rounded-2xl p-5 mb-5 flex flex-col md:flex-row md:w-4/12 items-center mx-auto">
         <Image
           className="rounded-xl flex-shrink-0"
-          src={profileData.images && profileData.images.length > 0 ? profileData.images[1].url : '/default_user_icon.jpg'}
+          src={profileData.images && profileData.images.length > 0 ? profileData.images[0].url : '/default_user_icon.jpg'}
           alt={profileData.display_name}
           width={200}
           height={200}
@@ -198,7 +168,7 @@ const User: React.FC = async () => {
                 <td className={index === 9 ? "p-2" : "p-2 border-b-2 border-black"}>
                   <Image
                     className="rounded-md"
-                    src={track.album.images.length > 0 ? track.album.images[0].url : '/default_user_icon.jpg'}
+                    src={track.album.images.length > 0 ? track.album.images[2].url : '/default_user_icon.jpg'}
                     alt={track.album.artists.name}
                     width={50}
                     height={50}
