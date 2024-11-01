@@ -41,7 +41,7 @@ export const GET = async (req: NextRequest) => {
         response_type: 'code',
         client_id: process.env.SPOTIFY_CLIENT_ID as string,
         scope: 'user-read-private user-read-email user-top-read',
-        redirect_uri: `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/callback`,
+        redirect_uri: `${process.env.BASE_URL}api/auth/callback`,
         state,
         show_dialog: 'true',
       }).toString()}`

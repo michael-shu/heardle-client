@@ -1,6 +1,6 @@
 import React from 'react'
 //const spotifyAuthUrl = 'http://localhost:5000/auth/login';
-const spotifyLogin = process.env.AUTH_URL || 'http://localhost:3000/api/auth/login';
+const spotifyLogin = process.env.BASE_URL + "api/auth/login";
 
 const page = () => {
 

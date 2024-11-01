@@ -31,7 +31,7 @@ export const GET = async (req: NextRequest) => {
 
   const bodyData = new URLSearchParams({
     code: code,
-    redirect_uri: `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/callback`,
+    redirect_uri: `${process.env.BASE_URL}api/auth/callback`,
     grant_type: 'authorization_code',
   }).toString();
 
@@ -69,7 +69,7 @@ export const GET = async (req: NextRequest) => {
 
       console.info("session", session);
 
-      return NextResponse.redirect(process.env.NEXT_PUBLIC_BASE_URL + "/home");
+      return NextResponse.redirect(process.env.BASE_URL + "home");
 
     } else {
       console.error('Failed to fetch token:', response.statusText);

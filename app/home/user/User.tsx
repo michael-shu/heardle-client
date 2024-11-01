@@ -66,7 +66,7 @@ interface userTracks {
 
 //const spotifyAuthUrl = 'http://localhost:5000/';
 
-const spotifyAuthURL = process.env.DATA_URL || 'http://localhost:3000/api/data';
+const spotifyAuthURL = process.env.BASE_URL + "api/data";
 
 const User: React.FC = async () => {
 
