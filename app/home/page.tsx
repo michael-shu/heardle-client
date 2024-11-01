@@ -1,39 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Link from 'next/link';
-//import { cookies } from 'next/headers';
-
-const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:3000/api';
-
 
 const page = () => {
-  //console.log("These are the user cookies, ", cookies().toString());
-  /*
-  console.log("This is the url we're headed to " + spotifyAuthURL + "test-session")
-
-  
-  const test = await fetch(spotifyAuthURL + "test-session", {
-    cache: 'no-cache',
-    headers: { Cookie: cookies().toString() },
-    credentials: 'include'
-  });
-  const data = await test.json();
-  console.log("Heres the data");
-  console.log(data);*/
-
-  /*
-  console.log("This is the url we're headed to " + spotifyAuthURL + "test-cookie")
-
-  
-  const test = await fetch(spotifyAuthURL + "test-cookie", {
-    headers: { Cookie: cookies().toString() },
-    credentials: 'include'
-  });
-  const data = await test.json();
-  console.log("Heres the data");
-  console.log(data);
-  console.log("heres the user cookies");
-  console.log(cookies().toString());*/
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 text-white">

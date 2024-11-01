@@ -66,31 +66,9 @@ interface userTracks {
 
 //const spotifyAuthUrl = 'http://localhost:5000/';
 
-const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:3000/api/data';
+const spotifyAuthURL = process.env.DATA_URL || 'http://localhost:3000/api/data';
 
 const User: React.FC = async () => {
-
-
-  /*
-  console.log("These are the user cookies, ", cookies().getAll());
-
-  const test = await fetch(spotifyAuthURL + "test-session", {
-    cache: 'no-cache',
-    headers: { Cookie: cookies().toString() },
-    credentials: 'include'
-  });
-  const data = await test.json();
-  console.log("Heres the session data");
-  console.log(data);*/
-
-  /*
-  const test = await fetch(spotifyAuthURL + "api/recommendation_genres", {
-    cache: 'no-cache',
-    headers: { Cookie: cookies().toString() },
-  });
-  console.log(test);
-  const genreData = await test.json();
-  console.table(genreData);*/
 
   //Fetch user data
   const res = await fetch(spotifyAuthURL + "?type=user_profile", {
