@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 
-const Play = async () => {
+const Play = () => {
     const genres: Record<string, string> = {
         "Pop": "pop",
         "Hip Hop": "hip-hop",
@@ -133,8 +133,6 @@ const Play = async () => {
 
 
     const [visibleGenres, setVisibleGenres] = useState(12); // Show 12 genres initially
-
-    
 
     // Show More/Show All button handler
     const handleShowMore = () => {

@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Link from 'next/link';
-import { cookies } from 'next/headers';
+//import { cookies } from 'next/headers';
 
-const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:5000/';
+const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:3000/api';
 
 
-const page = async () => {
-  console.log("These are the user cookies, ", cookies().toString());
+const page = () => {
+  //console.log("These are the user cookies, ", cookies().toString());
   /*
   console.log("This is the url we're headed to " + spotifyAuthURL + "test-session")
 
@@ -21,6 +21,7 @@ const page = async () => {
   console.log("Heres the data");
   console.log(data);*/
 
+  /*
   console.log("This is the url we're headed to " + spotifyAuthURL + "test-cookie")
 
   
@@ -32,7 +33,7 @@ const page = async () => {
   console.log("Heres the data");
   console.log(data);
   console.log("heres the user cookies");
-  console.log(cookies().toString());
+  console.log(cookies().toString());*/
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-green-400 to-blue-500 text-white">
@@ -40,8 +41,6 @@ const page = async () => {
 
       <div className="container mx-auto px-4 py-12">
         <section className="text-center mb-16">
-          Heres the user cookies:
-          {cookies().toString()}
           <h1 className="text-4xl font-bold mb-4">Welcome to Heardle</h1>
           <p className="text-lg">
             Discover your favorite tunes, track your listening habits, and dive deep into the world of music with Heardle.

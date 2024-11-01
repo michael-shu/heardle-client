@@ -66,10 +66,12 @@ interface userTracks {
 
 //const spotifyAuthUrl = 'http://localhost:5000/';
 
-const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:5000/';
+const spotifyAuthURL = process.env.AUTH_URL || 'http://localhost:3000/api/data';
 
 const User: React.FC = async () => {
 
+
+  /*
   console.log("These are the user cookies, ", cookies().getAll());
 
   const test = await fetch(spotifyAuthURL + "test-session", {
@@ -79,7 +81,7 @@ const User: React.FC = async () => {
   });
   const data = await test.json();
   console.log("Heres the session data");
-  console.log(data);
+  console.log(data);*/
 
   /*
   const test = await fetch(spotifyAuthURL + "api/recommendation_genres", {
@@ -91,7 +93,7 @@ const User: React.FC = async () => {
   console.table(genreData);*/
 
   //Fetch user data
-  const res = await fetch(spotifyAuthURL + "api/user_profile", {
+  const res = await fetch(spotifyAuthURL + "?type=user_profile", {
     cache: 'no-cache',
     headers: { Cookie: cookies().toString() },
   });
@@ -99,14 +101,14 @@ const User: React.FC = async () => {
   const profileData: userProfile = await res.json();
 
   //Fetch top artists for user
-  const artistsRes = await fetch(spotifyAuthURL + 'api/top_artists', {
+  const artistsRes = await fetch(spotifyAuthURL + '?type=top_artists', {
     cache: 'no-cache',
     headers: { Cookie: cookies().toString() },
   });
   const topArtists = await artistsRes.json();
 
 
-  const tracksRes = await fetch(spotifyAuthURL + 'api/top_tracks', {
+  const tracksRes = await fetch(spotifyAuthURL + '?type=top_tracks', {
     cache: 'no-cache',
     headers: { Cookie: cookies().toString() },
   });
