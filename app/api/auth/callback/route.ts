@@ -31,7 +31,7 @@ export const GET = async (req: NextRequest) => {
 
   const bodyData = new URLSearchParams({
     code: code,
-    redirect_uri: 'http://localhost:3000/api/auth/callback',
+    redirect_uri: `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/callback`,
     grant_type: 'authorization_code',
   }).toString();
 
